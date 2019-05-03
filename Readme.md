@@ -8,6 +8,8 @@ Using with vagrant boilerplate (https://github.com/Voronenko/devops-vagrant-ansi
 #    https://www.vagrantup.com/docs/provisioning/ansible_common.html
       config.vm.provision "ansible" do |ansible|
           ansible.playbook = "deployment/provisioners/lamp-box/box_lamp.yml"
+          ansible.galaxy_role_file = "deployment/provisioners/lamp-box/requirements.yml"
+          ansible.galaxy_roles_path = "deployment/provisioners/lamp-box/roles"
           ansible.verbose = true
           ansible.groups = {
               "lamp_box" => [vconfig['vagrant_machine_name']]
