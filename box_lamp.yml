@@ -1,5 +1,5 @@
 ---
-- hosts: phphost
+- hosts: lamp_box
   gather_facts: False
 
   vars:
