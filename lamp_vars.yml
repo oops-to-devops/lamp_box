@@ -1,4 +1,12 @@
-  php_pool_properties:
-    - {regexp: "^[;]?php_admin_value*memory_limit*", line: "php_admin_value[memory_limit] = 512M"}
+  box_php_pool_properties:
+    - {regexp: "^[;]?php_admin_value*memory_limit*", line: "php_admin_value[memory_limit] = 98M"}
     - {regexp: "^[;]?php_admin_value*post_max_size*", line: "php_admin_value[post_max_size] = 30M"}
-    - {regexp: "^[;]?php_admin_value*upload_max_filesize*", line: "php_admin_value[upload_max_filesize] = 50M"}
+    - {regexp: "^[;]?php_admin_value*upload_max_filesize*", line: "php_admin_value[upload_max_filesize] = 10M"}
+
+  box_option_install_xdebug: false
+  box_php_family: "7.0"
+
+  box_additional_php_extensions: []
+
+  box_project_phars: []
+
