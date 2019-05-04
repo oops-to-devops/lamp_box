@@ -1,3 +1,5 @@
+  box_webserver: "apache"
+
   box_php_pool_properties:
     - {regexp: "^[;]?php_admin_value*memory_limit*", line: "php_admin_value[memory_limit] = 98M"}
     - {regexp: "^[;]?php_admin_value*post_max_size*", line: "php_admin_value[post_max_size] = 30M"}

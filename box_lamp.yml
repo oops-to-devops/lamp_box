@@ -41,7 +41,14 @@
 
       - {
            role: "sa-apache",
+           when: box_webserver == "apache",
            tags: [create, sa_apache]
+        }
+
+      - {
+           role: "sa-nginx",
+           when: box_webserver == "nginx",
+           tags: [create, sa_nginx]
         }
 
       - {
@@ -56,6 +63,10 @@
   tasks:
 
     - debug: msg="Pre tasks section"
+
+    - name: Ensure /var/www/html directories present
+      file: path="/var/www/html" state="directory" owner="root" group="www-data" mode="u=rwx,g=rwx,o=rx"
+      become: yes
 
     - name: POC marker
       copy:
@@ -72,13 +83,14 @@
          become: yes
 
        - name: Configure apache2 for php (a2enconf)
-         shell: a2enconf php7.0-fpm
+         shell: "a2enconf php{{ box_php_family }}-fpm"
          become: yes
 
        - name: Restart apache
          service: name="apache2" state="restarted"
          become: yes
 
+      when: box_webserver == "apache"
       tags:
         - sa_apache
 
