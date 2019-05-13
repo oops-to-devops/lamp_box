@@ -31,7 +31,7 @@ Using with vagrant boilerplate (https://github.com/Voronenko/devops-vagrant-ansi
 ```
 
 #    https://www.vagrantup.com/docs/provisioning/ansible_common.html
-      config.vm.provision "ansible" do |ansible|
+      config.vm.provision "lamp-box", type: "ansible" do |ansible|
           ansible.playbook = "deployment/provisioners/lamp-box/box_lamp.yml"
           ansible.galaxy_role_file = "deployment/provisioners/lamp-box/requirements.yml"
           ansible.galaxy_roles_path = "deployment/provisioners/lamp-box/roles"
