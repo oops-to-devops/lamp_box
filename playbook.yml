@@ -40,19 +40,23 @@
   roles:
 
       - {
-           role: "sa-apache",
+           role: "sa_apache",
+           apache_mode: "{{ box_apache_mode }}",
+           apache2_disable_default: "{{ box_apache2_disable_default }}",
+           apache_modules: "{{ box_apache_modules }}",
            when: box_webserver == "apache",
            tags: [create, sa_apache]
         }
 
       - {
-           role: "sa-nginx",
+           role: "sa_nginx",
+           nginx_groups: "{{ box_nginx_groups }}",
            when: box_webserver == "nginx",
            tags: [create, sa_nginx]
         }
 
       - {
-         role: "sa-php-fpm",
+         role: "sa_php_fpm",
          php_family: "{{ box_php_family }}", # 5.6  | 7.0 | hhvm |  default
          option_install_xdebug: "{{box_option_install_xdebug}}",
          custom_pool_properties: "{{box_php_pool_properties}}",
@@ -97,4 +101,4 @@
 
 
 
-       
+

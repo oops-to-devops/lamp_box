@@ -1,0 +1,18 @@
+[submodule "roles/softasap.sa-apache"]
+        path = roles/sa_apache
+        url = https://github.com/softasap/sa-apache.git
+[submodule "roles/softasap.sa-nginx"]
+        path = roles/sa_nginx
+        url = https://github.com/softasap/sa-nginx.git
+[submodule "roles/softasap.sa-php-fpm"]
+        path = roles/sa_php_fpm
+        url = https://github.com/softasap/sa-php-fpm.git
+[submodule "roles/softasap.sa-mariadb"]
+        path = roles/sa_mariadb
+        url = https://github.com/softasap/sa-mariadb.git
+[submodule "roles/softasap.sa-php-pharables"]
+        path = roles/sa_php_pharables
+        url = https://github.com/softasap/sa-php-pharables.git
+[submodule "roles/softasap.sa-php-hhvm"]
+        path = roles/sa_php_hhvm
+        url = https://github.com/softasap/sa-php-hhvm.git

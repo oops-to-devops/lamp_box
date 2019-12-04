@@ -1,11 +1,11 @@
-lamp-box
+lamp_box
 ========
 
-Underlying ansible roles: `sa-apache`, `sa-php-fpm`.  Check roles documentation for whole set of parameters to override.
+Underlying ansible roles: `sa-nginx`, `sa-apache`, `sa-php-fpm`.  Check roles documentation for whole set of parameters to override.
 
 Supported tags:
 
-`sa_apache`, `sa_php_fpm`
+`sa_apache`, `sa_php_fpm`, `sa_nginx`
 
 Supported parameters overrides:
 
@@ -32,9 +32,9 @@ Using with vagrant boilerplate (https://github.com/Voronenko/devops-vagrant-ansi
 
 #    https://www.vagrantup.com/docs/provisioning/ansible_common.html
       config.vm.provision "lamp-box", type: "ansible" do |ansible|
-          ansible.playbook = "deployment/provisioners/lamp-box/box_lamp.yml"
-          ansible.galaxy_role_file = "deployment/provisioners/lamp-box/requirements.yml"
-          ansible.galaxy_roles_path = "deployment/provisioners/lamp-box/roles"
+          ansible.playbook = "deployment/provisioners/lamp_box/playbook.yml"
+          ansible.galaxy_role_file = "deployment/provisioners/lamp_box/requirements.yml"
+          ansible.galaxy_roles_path = "deployment/provisioners/lamp_box/roles"
           ansible.tags = ["sa_apache", "sa_php_fpm"]
           ansible.verbose = true
           ansible.groups = {
@@ -58,7 +58,7 @@ resource "null_resource" "lamped_servers" {
 
   provisioner "local-exec" {
 
-    command = "$INFRASTRUCTURE_ROOT_DIR/provisioners/lamp-box/provision_box.sh"
+    command = "$INFRASTRUCTURE_ROOT_DIR/provisioners/lamp_box/provision_box.sh"
 
     environment {
       REMOTE_HOST = "${digitalocean_droplet.web.ipv4_address}"
