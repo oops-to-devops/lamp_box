@@ -10,6 +10,11 @@ license:
     - "MIT"
 tags:
     - softasap
+    - nginx
+    - apache
+    - php
+    - fpm
+    - phar
 repository: "https://github.com/oops-to-devops/lamp_box"
 documentation: "https://github.com/oops-to-devops/lamp_box/blob/master/README.md"
 homepage: "https://www.softasap.com"
