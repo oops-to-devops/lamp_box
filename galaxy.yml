@@ -1,7 +1,7 @@
 namespace: "softasap"
 name: "lamp_box"
 description: wraps sa_nginx, sa_apache, sa_php_fpm  to prepare hosts from base_box group for further provisioning
-version: 0.1.0
+version: 0.2.0
 readme: "Readme.md"
 authors:
     - "Vyacheslav Voronenko"
@@ -10,6 +10,11 @@ license:
     - "MIT"
 tags:
     - softasap
+    - nginx
+    - apache
+    - php
+    - fpm
+    - phar
 repository: "https://github.com/oops-to-devops/lamp_box"
 documentation: "https://github.com/oops-to-devops/lamp_box/blob/master/README.md"
 homepage: "https://www.softasap.com"
